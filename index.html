@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+   <!-- Navbar (as it is) -->
+<nav id="navigation" class="navbar navbar-expand-lg ">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="C:\Users\paras\OneDrive\Desktop\Website\logo.webp" width="30" height="30" alt="Logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link active" href="#navigation">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Our Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link profile-icon" href="#">
+                        <img id="navbar-profile-pic" src="C:\Users\paras\OneDrive\Desktop\Website\image.png" width="30" height="30" alt="Profile Icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Side Panel (Initially hidden) -->
+<!-- Side Panel (Initially hidden) -->
+<div id="sidePanel" class="side-panel">
+    <div class="panel-content">
+        <!-- Profile Photo Section -->
+        <img id="profile-picture" src="C:\Users\paras\OneDrive\Desktop\Website\image.png" width="100" height="100" alt="Profile Picture" class="rounded-circle">
+
+        <!-- Upload Photo Section below profile picture -->
+        <label for="profile-photo" class="upload-label">Upload Profile Photo:</label>
+        <input type="file" id="profile-photo" name="profile-photo" accept="image/*">
+
+        <!-- Name and Email (Aligned in a classic manner) -->
+        <div class="user-info">
+            <p class="user-name"><strong>Name:</strong> Abhishek Paraskar</p>
+            <p class="user-email"><strong>Email:</strong> abhishekparaskar79@gmail.com</p>
+        </div>
+
+        <!-- Close Button -->
+        <button class="close-btn" onclick="closePanel()">Close</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<hr class="herohr">
+
+    <!-- Hero Section -->
+    <section id="herosection" class="hero">
+        <div class="container d-flex flex-column align-items-center justify-content-center">
+            <h1>Enter Your Text</h1>
+
+            <!-- Textbox -->
+            <textarea class="form-control" placeholder="Enter the text to classify"></textarea>
+
+            <!-- Classify Button -->
+            <button class="btn btn-primary mt-3">Classify</button>
+        </div>
+    </section>
+
+
+
+
+    <!-- About us Section -->
+
+    <section id="about" class="about-us py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Left Side: About Us with Tabs -->
+                <div class="col-md-6">
+                    <h2 class="about-heading">About Us</h2>
+                    <ul class="nav nav-tabs my-4" id="aboutTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="mission-tab" data-bs-toggle="tab"
+                                data-bs-target="#mission" type="button" role="tab" aria-controls="mission"
+                                aria-selected="true">
+                                Our Mission
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision"
+                                type="button" role="tab" aria-controls="vision" aria-selected="false">
+                                Our Vision
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="aboutTabContent">
+                        <!-- Our Mission Tab -->
+                        <div class="tab-pane fade show active" id="mission" role="tabpanel"
+                            aria-labelledby="mission-tab">
+                            <h4>Our Mission</h4>
+                            <p>Our mission is to create impactful solutions that address the needs of modern industries.
+                                We focus on sustainability and innovation.</p>
+                            <button class="btn btn-primary btn-learn-more">Learn More</button>
+                        </div>
+                        <!-- Our Vision Tab -->
+                        <div class="tab-pane fade" id="vision" role="tabpanel" aria-labelledby="vision-tab">
+                            <h4>Our Vision</h4>
+                            <p>Our vision is to lead the industry by promoting technological advancements and nurturing
+                                a sustainable future.</p>
+                            <button class="btn btn-primary btn-learn-more" alt="Team Work" class="about-image">Learn
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Image -->
+                <div class="col-md-6 d-flex  justify-content-center align-items-center">
+                    <div class="img-box">
+                        <img src="C:\Users\paras\OneDrive\Desktop\Website\group_image.png" alt="About Us Image"
+                            class="about-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Horizontal line -->
+    <hr>
+
+    <!-- Our services -->
+    <section id="services" class="services-section py-5">
+        <div class="container">
+            <!-- Main Heading and Paragraph -->
+            <h2 class="services-heading">Our Services</h2>
+            <p>We offer the service to detect and moderate AI-generated content in environments such as social media platforms, ensuring compliance with rules against automated content generation or identifying potential misuse of GPT-generated text.
+            </p>
+            <!-- Service Boxes -->
+            <div class="row">
+                <!-- Service 1 -->
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <i class="bi bi-gear"></i> <!-- Bootstrap icon -->
+                        </div>
+                        <h4 class="service-title">Service 1</h4>
+                        <p class="service-text">Educational institutions can use the classifier to identify AI-generated content in assignments, research papers, and essays to maintain academic integrity by distinguishing between student work and AI-assisted writing.  </p>
+                        <button class="btn btn-primary btn-read-more">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <i class="bi bi-lightbulb"></i> <!-- Bootstrap icon -->
+                        </div>
+                        <h4 class="service-title">Service 2</h4>
+                        <p class="service-text"> Journalists, news outlets, and fact-checking organizations can deploy the classifier to ensure that content submitted or published is human-authored, preventing the spread of disinformation or automated, non-verified content in the media industry. </p>
+                        <button class="btn btn-primary btn-read-more">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-4">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <i class="bi bi-globe"></i> <!-- Bootstrap icon -->
+                        </div>
+                        <h4 class="service-title">Service 3</h4>
+                        <p class="service-text">Businesses using AI chatbots for customer support can leverage the classifier to distinguish between chatbot responses and human-agent responses. This helps monitor the quality and appropriateness of automated replies and ensures seamless transitions between AI and human support when needed.   </p>
+                        <button class="btn btn-primary btn-read-more">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-6 contact-form">
+                <div class="contact-container">
+                    <h2 class="mb-4">Get in Touch</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your full name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Google Map on the Right -->
+            <div class="col-lg-6 map-section">
+                <div class="location-container">
+                    <h2 class="mb-4">Our Location</h2>
+                    <div class="map-container">
+                        <iframe width="520" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=JSPM%20Rajarshi%20Shahu%20College%20Of%20Engineering%20,%20Tathawade,%20JSPM%20Rajarshi%20shahu%20college%20of%20engineering%20,%20Tathawade,%20Service%20Rd,%20Ashok%20Nagar,%20Tathawade,%20Pimpri-Chinchwad,%20Maharashtra%20411033%20Pune+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Classic Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container text-center text-md-start">
+            <div class="row">
+
+                <!-- About Section -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Human Responce Identifier</h5>
+                    <p>Welcome to our innovative text classification project! We are a dedicated team of data scientists, developers, and AI enthusiasts committed to harnessing the power of natural language processing (NLP) to transform how we understand and utilize text data.
+                    </p>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#navigation" class="text-white" style="text-decoration: none;">Home</a></li>
+                        <li><a href="#about" class="text-white" style="text-decoration: none;">About</a></li>
+                        <li><a href="#services" class="text-white" style="text-decoration: none;">Services</a></li>
+                        <li><a href="#contact" class="text-white" style="text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Follow Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.facebook.com/" class="text-white" style="text-decoration: none;"><i
+                                    class="fab fa-facebook-f me-2"></i> Facebook</a></li>
+                        <li><a href="https://x.com/" class="text-white" style="text-decoration: none;"><i
+                                    class="fab fa-twitter me-2"></i> Twitter</a></li>
+                        <li><a href="https://www.instagram.com/" class="text-white" style="text-decoration: none;"><i
+                                    class="fab fa-instagram me-2"></i> Instagram</a></li>
+                        <li><a href="https://www.linkedin.com" class="text-white" style="text-decoration: none;"><i
+                                    class="fab fa-linkedin-in me-2"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contact</h5>
+                    <p><i class="fas fa-home mr-3"></i> Mumbai-Pune Bypass Highway, Pune, India</p>
+                    <p><i class="fas fa-envelope mr-3"></i> info@company.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                </div>
+            </div>
+
+            <!-- Horizontal Line -->
+            <hr class="mb-4">
+
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-md-7 col-lg-8">
+                    <p class="text-white">© 2024 All rights reserved by:
+                        <a href="#" style="text-decoration: none;">
+                            <strong class="text-warning">Human Responce Identifier</strong>
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-md-5 col-lg-4 text-center text-md-right">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/" class="btn btn-outline-light btn-floating btn-sm" style="font-size: 23px;"><i
+                                    class="fab fa-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://x.com/" class="btn btn-outline-light btn-floating btn-sm" style="font-size: 23px;"><i
+                                    class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/" class="btn btn-outline-light btn-floating btn-sm" style="font-size: 23px;"><i
+                                    class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com" class="btn btn-outline-light btn-floating btn-sm" style="font-size: 23px;"><i
+                                    class="fab fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS and Font Awesome -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

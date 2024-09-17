@@ -1,0 +1,443 @@
+/* Custom Navbar Styling */
+
+.btn {
+  border-radius: 2rem !important; /* Force the border-radius */
+}
+
+.navbar {
+  padding: 10px 0; /* Adjust padding for better spacing */
+  /* background-color:#403233; Light background */
+  background-color:#221c1e;
+  /* border: 1px solid rgb(138, 135, 135); */
+}
+
+
+.navbar-brand img {
+  height: 40px; /* Adjust the height of the logo */
+  width: auto;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+
+.navbar-nav .nav-link {
+  color: #fff ;  /* Custom color for links */
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 20px; /* Space between links */
+  transition: color 0s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff; /* Hover color */
+} 
+
+
+.navbar-nav .nav-link.active {
+  color:gold !important; /* Keep yellow when active */
+}
+
+.navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.1); /* Custom border color for toggle */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  filter: brightness(0) invert(1); /* Custom color for the toggler icon */
+}
+
+.navbar-nav .nav-item {
+  position: relative;
+}
+
+.navbar-nav .nav-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 0;
+  height: 3px;
+  background-color:gold;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav .nav-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+.navbar-nav .nav-item:last-child {
+  margin-right: 0; /* Remove margin on last nav item */
+}
+
+/* Profile Icon Styling */
+.navbar-nav .nav-link img {
+  border-radius: 50%; /* Make the profile icon round */
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link img:hover {
+  transform: scale(1.5); /* Slightly enlarge on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .navbar-nav {
+      text-align: center; /* Center the links in mobile view */
+  }
+
+  .navbar-nav .nav-link {
+      margin-right: 0; /* Remove right margin for mobile view */
+      padding: 10px 0; /* Add padding between links */
+  }
+}
+
+
+
+/* Side panel styling */
+.side-panel {
+  height: 80%; /* Height less than the full page */
+  width: 300px; /* Fixed width */
+  position: fixed;
+  z-index: 1000;
+  top: 10%; /* Center vertically */
+  right: -300px; /* Initially hidden off-screen */
+  background-color: #111; /* Dark background */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: auto; /* Enable vertical scroll if content overflows */
+  transition: 0.5s; /* Smooth transition */
+  padding: 20px;
+  color: white;
+  border-top-left-radius: 20px; /* Curved border */
+  border-bottom-left-radius: 20px; /* Curved border */
+  border-top-right-radius: 20px; /* Curved border */
+  border-bottom-right-radius: 20px;
+  box-shadow: 1px 0 5px rgba(110, 127, 136, 0.5); /* Shadow effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center elements horizontally */
+  margin-right:2px;
+}
+
+.side-panel img#profile-picture {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.side-panel .panel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center elements horizontally */
+  height: 100%;
+}
+
+.side-panel .upload-label {
+  margin-top: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.side-panel .panel-content input[type="file"] {
+  margin-bottom: 10px;
+  display: block;
+  text-align: center; /* Center the chosen file label */
+  margin-left:25%; /* Center the file input */
+  cursor: pointer;
+}
+
+.side-panel .user-info {
+  margin-top: 10px;
+  text-align: center; /* Classic left-aligned name and email */
+  width: 100%; /* Take full width of the panel */
+}
+
+.side-panel .user-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.side-panel .panel-content button.close-btn {
+  display: block;
+  width: 50%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 2rem;
+  margin-top: auto; /* Push the button to the bottom */
+}
+
+.side-panel .panel-content button.close-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+.herohr {
+  border: none;               /* Remove any border */
+  height: 0.5px;                /* Set the height to 1px */
+  background-color: #899aac;  /* Blue color for the line */
+  margin: 0;                  /* Remove default margin */
+  padding: 0;                 /* Ensure no padding */
+  width: 100%;                /* Full-width line */
+}
+
+/* Hero section */
+ /* Hero Section Styling */
+ .hero {
+  height: 125vh;
+  /* background-image: url('https://th.bing.com/th/id/OIP.pSi1cQsORh7n9xbOhXQ5CQAAAA?rs=1&pid=ImgDetMain'); */
+  background-image: url('bg2.png');
+  background-color: #141b21;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  flex-direction: column;
+  padding-bottom: 30px;
+  
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Textarea Styling */
+.hero .form-control {
+  width: 600px;
+  height: 180px;
+  resize: none; /* Disable resizing of the textarea */
+  /* margin-left: 25px; */
+  margin-bottom: 20px;
+  white-space: normal; /* Ensure text wraps to the next line */
+  word-wrap: break-word; /* Handle word wrapping */
+  overflow-wrap: break-word; /* Ensure long words are broken */
+  text-align: left; /* Ensure text alignment is correct */
+}
+
+.hero .btn {
+  font-size: 1.2rem;
+  padding: 10px 30px;
+  border-radius: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+      font-size: 2.5rem;
+  }
+  .hero .form-control {
+      width: 100%;
+  }
+  .hero .btn {
+      width: 100%;
+  }
+}
+
+
+/* About us  */
+.about-heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.btn-learn-more {
+  border-radius: 2rem;
+}
+.about-image {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 2px 4px 5px rgba(58, 59, 60, 0.5);
+  /* border: 1px solid #3f4041; Add border to the image */
+  border-radius: 10px; /* Optional: Rounded corners */
+}
+.img-box{
+  transition: transform 0.3s ease-in-out;
+}
+.img-box:hover {
+  transform: scale(0.9); 
+}
+
+/* sepration line  */
+hr {
+  border: 0;
+  height: 2px;
+  background-color: #007bff;
+  margin: 50px 0;
+}
+
+/* Our services */
+.services-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.services-section p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.service-box {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.service-box:hover {
+  transform: translateY(-10px);
+}
+.service-icon {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.service-text {
+  max-height: 3.2em; /* Limits the text to two lines */
+  line-height: 1.6em; /* Sets the height of a line of text */
+  overflow: hidden; /* Hides the overflow text */
+  transition: max-height 0.3s ease-out; /* Smooth transition for expanding */
+}
+
+.service-text.expanded {
+  max-height: none; /* Remove the height restriction when expanded */
+}
+
+ .btn-read-more {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+} 
+
+.btn-read-more:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+/* Contact Section */
+/* Custom styles for map */
+/* Custom styles for map */
+.map-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 83%; /* Aspect ratio 16:9 */
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Flexbox to ensure both sections are vertically aligned */
+.contact-form, .map-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Contact Form Styling */
+.contact-container, .location-container {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.location-container {
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 992px) {
+  .map-section, .contact-form {
+      margin-bottom: 30px;
+  }
+}
+
+
+
+
+
+/* Footer Custom Styles */
+footer {
+  /* background-color: #343a40; */
+  background-color: #181415;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+footer a {
+  color: #f8f9fa;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #ffc107;
+}
+
+footer h5 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+footer hr {
+  border-top: 1px solid #f8f9fa;
+}
+
+footer ul li a {
+  font-size: 18px;
+}
+
+footer .btn-floating {
+  font-size: 18px;
+}
+
+.footer-bottom {
+  padding: 20px 0;
+  background-color: #212529;
+}
+
+@media (max-width: 767px) {
+  footer .list-inline {
+      display: flex;
+      justify-content: center;
+  }
+}
+
