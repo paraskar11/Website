@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #2b2b2b;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+            font-size: 16px;
+        }
+
+        .result-box {
+            background-color: #333;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+            height: 400px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* .result-box:hover {
+            transform: scale(1.05); /* Slight zoom-in on hover */
+        /* } */ 
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #resultText {
+            font-size: 1rem;
+            white-space: pre-wrap;
+            text-align: left;
+            background: none;
+            color: #fff;
+            outline: none;
+            overflow-y: auto;
+            height: 200px;
+        }
+
+        /* Blinking cursor animation */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink-cursor 0.75s step-end infinite;
+        }
+
+        @keyframes blink-cursor {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .loading-dots {
+            font-size: 1.5rem;
+            display: inline-block;
+            text-align: center;
+            height: 1rem;
+        }
+
+        .loading-dots::after {
+            content: '...';
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% {
+                color: rgba(255, 255, 255, 0);
+                text-shadow: .3em 0 0 rgba(255, 255, 255, 0), .6em 0 0 rgba(255, 255, 255, 0);
+            }
+            40% {
+                color: white;
+                text-shadow: .3em 0 0 rgba(255, 255, 255, 0), .6em 0 0 rgba(255, 255, 255, 0);
+            }
+            60% {
+                text-shadow: .3em 0 0 white, .6em 0 0 rgba(255, 255, 255, 0);
+            }
+            80%, 100% {
+                text-shadow: .3em 0 0 white, .6em 0 0 white;
+            }
+        }
+
+        .animate-button {
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+
+        .animate-button:hover {
+            transform: scale(1.1);
+        }
+
+        .result-container {
+            position: relative;
+        }
+
+        .button-container {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h1>Result</h1> <!-- "Result" is shown immediately without typing -->
+        <div id="loadingDots" class="loading-dots">Processing</div>
+        <div id="resultText" class="form-control typing-cursor" style="display: none;" readonly></div>
+        <div class="button-container">
+            <button id="resetButton" class="btn btn-primary animate-button">Reset</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Custom result with percentages for human and GPT contributions
+        const resultText = "- Human-generated content: 65%\n- AI (GPT)-generated content: 35%.\n\nThe analysis of the input text shows that it is mostly human-generated with a small contribution from AI.";
+        const typingSpeed = 50; // Speed of typing in milliseconds
+        const delayBeforeResult = 3000; // 3 seconds delay before showing result
+
+        // Function to simulate typing animation
+        function typeWriter(text, element) {
+            let index = 0;
+            const interval = setInterval(() => {
+                if (index < text.length) {
+                    element.innerHTML += text[index];
+                    index++;
+                } else {
+                    clearInterval(interval); // Stop the typing effect when text is fully displayed
+                    // Remove the cursor animation after typing completes
+                    element.classList.remove('typing-cursor');
+                }
+            }, typingSpeed);
+        }
+
+        // Simulate delay before showing the result
+        function showResult() {
+            const resultElement = document.getElementById('resultText');
+            const loadingDotsElement = document.getElementById('loadingDots');
+
+            setTimeout(() => {
+                loadingDotsElement.style.display = 'none'; // Clear the processing dots
+                resultElement.style.display = 'block'; // Show result text box
+                typeWriter(resultText, resultElement); // Start typing the result
+            }, delayBeforeResult); // Delay before showing the result
+        }
+
+        // Start the delay and typing animation on page load
+        showResult();
+
+        // Reset button logic
+        document.getElementById('resetButton').addEventListener('click', () => {
+            // Redirect to the front page (replace 'frontpage.html' with your actual front page)
+            window.location.href = 'frontpage.html';
+        });
+    </script>
+</body>
+</html>
